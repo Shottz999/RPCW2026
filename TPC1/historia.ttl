@@ -1,0 +1,128 @@
+@prefix : <http://www.rpcw2026.pt/historia#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################
+# Ontologia
+#################################################
+
+:HistoriaOntologia a owl:Ontology .
+
+#################################################
+# Classes
+#################################################
+
+:Pessoa a owl:Class .
+
+:Estudante a owl:Class ;
+    rdfs:subClassOf :Pessoa .
+
+:Professor a owl:Class ;
+    rdfs:subClassOf :Pessoa .
+
+:Universidade a owl:Class .
+
+:Escola a owl:Class .
+
+:Curso a owl:Class .
+
+:Lingua a owl:Class .
+
+#################################################
+# Data Properties
+#################################################
+
+:nome a owl:DatatypeProperty ;
+    rdfs:domain :Pessoa ;
+    rdfs:range xsd:string .
+
+:idade a owl:DatatypeProperty ;
+    rdfs:domain :Pessoa ;
+    rdfs:range xsd:integer .
+
+:nacionalidade a owl:DatatypeProperty ;
+    rdfs:domain :Pessoa ;
+    rdfs:range xsd:string .
+
+#################################################
+# Object Properties
+#################################################
+
+:frequenta a owl:ObjectProperty ;
+    rdfs:domain :Estudante ;
+    rdfs:range :Curso .
+
+:leciona a owl:ObjectProperty ;
+    rdfs:domain :Professor ;
+    rdfs:range :Curso .
+
+:fala a owl:ObjectProperty ;
+    rdfs:domain :Pessoa ;
+    rdfs:range :Lingua .
+
+:pertenceA a owl:ObjectProperty ;
+    rdfs:domain :Pessoa ;
+    rdfs:range :Universidade .
+
+:parceiroDe a owl:ObjectProperty ;
+    rdfs:domain :Pessoa ;
+    rdfs:range :Pessoa ;
+    owl:symmetricProperty true .
+
+#################################################
+# Indivíduos
+#################################################
+
+# Universidade e Escola
+
+:UniversidadeMinho a :Universidade ;
+    :nome "Universidade do Minho" .
+
+:ELACH a :Escola ;
+    :nome "Escola de Letras, Artes e Ciências Humanas" .
+
+# Curso
+
+:CursoAlemao a :Curso ;
+    :nome "Curso de Alemão" .
+
+# Línguas
+
+:Portugues a :Lingua .
+:Espanhol a :Lingua .
+:Ingles a :Lingua .
+:Alemao a :Lingua .
+
+#################################################
+# Pessoas
+#################################################
+
+:Eduardo a :Estudante ;
+    :nome "Eduardo" ;
+    :idade 21 ;
+    :pertenceA :UniversidadeMinho ;
+    :frequenta :CursoAlemao ;
+    :fala :Portugues , :Espanhol , :Ingles , :Alemao ;
+    :parceiroDe :Hanna .
+
+:Carlos a :Estudante ;
+    :nome "Carlos" ;
+    :frequenta :CursoAlemao .
+
+:Ana a :Estudante ;
+    :nome "Ana" ;
+    :frequenta :CursoAlemao .
+
+:Hanna a :Estudante ;
+    :nome "Hanna" ;
+    :nacionalidade "Alemã" ;
+    :pertenceA :UniversidadeMinho ;
+    :fala :Alemao , :Portugues ;
+    :parceiroDe :Eduardo .
+
+:HelmutRatz a :Professor ;
+    :nome "Helmut Ratz" ;
+    :nacionalidade "Alemã" ;
+    :leciona :CursoAlemao .
