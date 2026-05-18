@@ -1,0 +1,350 @@
+@prefix : <http://www.semanticweb.org/rlima/ontologies/2026/4/untitled-ontology-11/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/rlima/ontologies/2026/4/untitled-ontology-11/> .
+
+<http://www.semanticweb.org/rpcw2026/fabula> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/rpcw2026/fabula#apanha
+:apanha rdf:type owl:ObjectProperty ;
+        rdfs:domain :Pesonagem ;
+        rdfs:range :Objeto .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#atraidoPor
+:atraidoPor rdf:type owl:ObjectProperty ;
+            rdfs:domain :Pesonagem ;
+            rdfs:range :Objeto .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#deixaCair
+:deixaCair rdf:type owl:ObjectProperty ;
+           rdfs:domain :Pesonagem ;
+           rdfs:range :Objeto .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#elogia
+:elogia rdf:type owl:ObjectProperty ;
+        rdfs:domain :Pesonagem ;
+        rdfs:range :Pesonagem .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#engana
+:engana rdf:type owl:ObjectProperty ;
+        rdfs:domain :Pesonagem ;
+        rdfs:range :Pesonagem .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#estaEmpoleiradoEm
+:estaEmpoleiradoEm rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Pesonagem ;
+                   rdfs:range :Local .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#interageCom
+:interageCom rdf:type owl:ObjectProperty ;
+             rdfs:domain :Pesonagem ;
+             rdfs:range :Pesonagem .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#localizadoEm
+:localizadoEm rdf:type owl:ObjectProperty ;
+              rdfs:domain owl:Thing ;
+              rdfs:range :Local .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#possui
+:possui rdf:type owl:ObjectProperty ;
+        rdfs:domain :Pesonagem .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#temCaracteristica
+:temCaracteristica rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Pesonagem ;
+                   rdfs:range :Carateristica .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#temSentimento
+:temSentimento rdf:type owl:ObjectProperty ;
+               rdfs:domain :Pesonagem ;
+               rdfs:range :Sentimento .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#viveEm
+:viveEm rdf:type owl:ObjectProperty ;
+        rdfs:domain :Pesonagem ;
+        rdfs:range :Local .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/rpcw2026/fabula#descricao
+:descricao rdf:type owl:DatatypeProperty ;
+           rdfs:domain owl:Thing ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#estadoFinal
+:estadoFinal rdf:type owl:DatatypeProperty ;
+             rdfs:domain owl:Thing ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#estadoInicial
+:estadoInicial rdf:type owl:DatatypeProperty ;
+               rdfs:domain owl:Thing ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#nome
+:nome rdf:type owl:DatatypeProperty ;
+      rdfs:domain owl:Thing ;
+      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#valor
+:valor rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Objeto ;
+       rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Acao
+:Acao rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Adulacao
+:Adulacao rdf:type owl:Class ;
+          rdfs:subClassOf :Carateristica .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Animal
+:Animal rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Apanhar
+:Apanhar rdf:type owl:Class ;
+         rdfs:subClassOf :Acao .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Arvore
+:Arvore rdf:type owl:Class ;
+        rdfs:subClassOf :Local .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Astucia
+:Astucia rdf:type owl:Class ;
+         rdfs:subClassOf :Carateristica .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Ave
+:Ave rdf:type owl:Class ;
+     rdfs:subClassOf :Animal .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Bosque
+:Bosque rdf:type owl:Class ;
+        rdfs:subClassOf :Local .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Cantar
+:Cantar rdf:type owl:Class ;
+        rdfs:subClassOf :Acao .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Carateristica
+:Carateristica rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Confusao
+:Confusao rdf:type owl:Class ;
+          rdfs:subClassOf :Sentimento .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Corvo
+:Corvo rdf:type owl:Class ;
+       rdfs:subClassOf :Ave .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#DeixarCair
+:DeixarCair rdf:type owl:Class ;
+            rdfs:subClassOf :Acao .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Elogiar
+:Elogiar rdf:type owl:Class ;
+         rdfs:subClassOf :Acao .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Enganar
+:Enganar rdf:type owl:Class ;
+         rdfs:subClassOf :Acao .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Local
+:Local rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Mamifero
+:Mamifero rdf:type owl:Class ;
+          rdfs:subClassOf :Animal .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Objeto
+:Objeto rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Pesonagem
+:Pesonagem rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#PlumagemNegra
+:PlumagemNegra rdf:type owl:Class ;
+               rdfs:subClassOf :Carateristica .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Queijo
+:Queijo rdf:type owl:Class ;
+        rdfs:subClassOf :Objeto .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Ramo
+:Ramo rdf:type owl:Class ;
+      rdfs:subClassOf :Local .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Raposa
+:Raposa rdf:type owl:Class ;
+        rdfs:subClassOf :Mamifero .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Sentimento
+:Sentimento rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Vaidade
+:Vaidade rdf:type owl:Class ;
+         rdfs:subClassOf :Sentimento .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Vergonha
+:Vergonha rdf:type owl:Class ;
+          rdfs:subClassOf :Sentimento .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#VozBela
+:VozBela rdf:type owl:Class ;
+         rdfs:subClassOf :Carateristica .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Adulacao_Raposa
+:Adulacao_Raposa rdf:type owl:NamedIndividual ,
+                          :Adulacao ;
+                 rdfs:comment "\"Estratégia usada pela Raposa para elogiar falsamente o Corvo\"" .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Arvore_Alta
+:Arvore_Alta rdf:type owl:NamedIndividual ,
+                      :Arvore ;
+             :localizadoEm :Arvore_Alta ;
+             owl:topDataProperty """nome = \"Árvore alta\"
+descricao = \"Árvore onde o Corvo estava empoleirado\"""" .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Astucia_Raposa
+:Astucia_Raposa rdf:type owl:NamedIndividual ,
+                         :Astucia ;
+                owl:topDataProperty """nome = \"Mestre Raposa\"
+descricao = \"Raposa astuta que enganou o Corvo através de elogios\"""" ;
+                rdfs:comment "\"Característica usada pela Raposa para enganar o Corvo\"" .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Base_Arvore
+:Base_Arvore rdf:type owl:NamedIndividual ,
+                      :Local ;
+             owl:topDataProperty """nome = \"Base da árvore\"
+descricao = \"Local onde a Raposa se aproximou\"""" .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Bosque
+:Bosque rdf:type owl:NamedIndividual ,
+                 :Bosque ;
+        :viveEm :Bosque ;
+        owl:topDataProperty """nome = \"Bosque\"
+descricao = \"Local onde decorre a fábula\"""" .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Confusao_Corvo
+:Confusao_Corvo rdf:type owl:NamedIndividual ,
+                         :Confusao ;
+                :temSentimento :Confusao_Corvo ;
+                rdfs:comment "\"Estado emocional do Corvo após perder o queijo\"" .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Corvo_Mestre
+:Corvo_Mestre rdf:type owl:NamedIndividual ,
+                       :Corvo ;
+              :possui :Queijo_Valioso ;
+              owl:topDataProperty """nome = \"Mestre Corvo\"
+descricao = \"Corvo vaidoso que segurava um queijo no bico\"
+estadoInicial = \"Tinha o queijo no bico e estava empoleirado numa árvore\"
+estadoFinal = \"Ficou envergonhado e confuso\"""" .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Queijo_Valioso
+:Queijo_Valioso rdf:type owl:NamedIndividual ,
+                         :Queijo ;
+                owl:topDataProperty """nome = \"Queijo\"
+descricao = \"Objeto apetitoso que o Corvo segurava no bico\"
+valor = \"Valioso\"
+estadoInicial = \"Na posse do Corvo\"
+estadoFinal = \"Na posse da Raposa\"""" .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Ramo_Alto
+:Ramo_Alto rdf:type owl:NamedIndividual ,
+                    :Ramo ;
+           owl:topDataProperty """nome = \"Ramo alto\"
+descricao = \"Ramo da árvore onde o Corvo estava empoleirado\"""" .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Raposa_Mestre
+:Raposa_Mestre rdf:type owl:NamedIndividual ,
+                        :Raposa ;
+               :deixaCair :Queijo_Valioso ;
+               :interageCom :Raposa_Mestre ;
+               owl:topDataProperty """nome = \"Mestre Raposa\"
+descricao = \"Raposa astuta que enganou o Corvo através de elogios\"""" .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Vaidade_Corvo
+:Vaidade_Corvo rdf:type owl:NamedIndividual ,
+                        :Vaidade ;
+               :temCaracteristica :Vaidade_Corvo ;
+               rdfs:comment "\"Sentimento sentido pelo Corvo ao ouvir os elogios da Raposa\"" .
+
+
+###  http://www.semanticweb.org/rpcw2026/fabula#Vergonha_Corvo
+:Vergonha_Corvo rdf:type owl:NamedIndividual ,
+                         :Vergonha ;
+                :temSentimento :Vergonha_Corvo ;
+                rdfs:comment "\"Sentimento do Corvo depois de perceber que foi enganado\"" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
